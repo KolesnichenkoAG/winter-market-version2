@@ -2,6 +2,7 @@ package ru.geekbrains.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.geekbrains.aspect.Timer;
 import ru.geekbrains.entities.Product;
 import ru.geekbrains.repositories.ProductRepository;
 
@@ -13,6 +14,7 @@ import java.util.Optional;
 public class ProductService {
     private final ProductRepository productRepository;
 
+    @Timer
     public List<Product> findAll() {
         return productRepository.findAll();
     }
@@ -21,6 +23,7 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
+    @Timer
     public void deleteById(Long id) {
         productRepository.deleteById(id);
     }

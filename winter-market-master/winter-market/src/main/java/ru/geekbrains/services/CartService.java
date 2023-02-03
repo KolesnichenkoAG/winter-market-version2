@@ -3,6 +3,7 @@ package ru.geekbrains.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.geekbrains.aspect.Timer;
 import ru.geekbrains.dtos.Cart;
 import ru.geekbrains.entities.Product;
 import ru.geekbrains.exceptions.ResourceNotFoundException;
@@ -24,12 +25,14 @@ public class CartService {
         return tempCart;
     }
 
+    @Timer
     public void add(Long productId) {
         Product product = productService.findById(productId).orElseThrow(() -> new ResourceNotFoundException
                 ("Не удаеться добавить продукт с id: " + productId + " в корзину. Продукт не найден"));
         tempCart.add(product);
     }
 
+    @Timer
     public void clearCart() {
         tempCart.clear();
     }
