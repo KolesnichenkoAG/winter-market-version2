@@ -22,4 +22,12 @@ public class CartDto {
     public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
+
+    public CartDto() {
+    }
+
+    public CartDto(List<CartItemDto> items, BigDecimal totalPrice) {
+        this.items = items;
+        this.totalPrice = totalPrice;
+    }
 }
