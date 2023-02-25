@@ -23,6 +23,11 @@ create table products
 insert into products (title, price, category_id)
 values ('Milk', 80.20, 1),
        ('Bread', 25.60, 1),
+       ('Bread1', 25.60, 1),
+       ('Bread2', 25.60, 1),
+       ('Bread3', 25.60, 1),
+       ('Bread4', 25.60, 1),
+       ('Bread5', 25.60, 1),
        ('Cheese', 300.00, 1);
 
 create table orders

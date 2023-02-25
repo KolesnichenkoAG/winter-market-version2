@@ -21,4 +21,8 @@ public class CartItem {
         price = pricePerProduct.add(price);
     }
 
+    public void decrementQuantity() {
+        quantity--;
+    }
+
 }
