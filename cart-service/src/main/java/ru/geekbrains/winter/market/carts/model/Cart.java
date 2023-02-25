@@ -17,9 +17,9 @@ public class Cart {
         this.items = new ArrayList<>();
     }
 
-    public List<CartItem> getItems() {
+    /*public List<CartItem> getItems() {
         return Collections.unmodifiableList(items);
-    }
+    }*/
 
     public void add(ProductDto product) {
         for (CartItem item : items) {
@@ -47,5 +47,19 @@ public class Cart {
     public void clear() {
         items.clear();
         totalPrice = BigDecimal.ZERO;
+    }
+
+    /*public void deleteProductInCart(ProductDto product) {
+        ;
+        totalPrice -= product.getPrice();
+    }*/
+
+    public void change(ProductDto product, int delta) {
+        if (delta == 1) {
+            add(product);
+        }
+        /*if (delta == -1) {
+            deleteProductInCart(product);
+        }*/
     }
 }

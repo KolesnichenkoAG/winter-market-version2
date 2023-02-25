@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 
 public class OrderItemDto {
     private Long id;
-    private String username;
-    private String title_product;
-    private int product_quantity;
+    private String productTitle;
+    private Long orderId;
+    private int quantity;
+    private BigDecimal pricePerProduct;
     private BigDecimal price;
-    private BigDecimal total_amount;
 
     public Long getId() {
         return id;
@@ -18,28 +18,36 @@ public class OrderItemDto {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getProductTitle() {
+        return productTitle;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setProductTitle(String productTitle) {
+        this.productTitle = productTitle;
     }
 
-    public String getTitle_product() {
-        return title_product;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public void setTitle_product(String title_product) {
-        this.title_product = title_product;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public int getProduct_quantity() {
-        return product_quantity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setProduct_quantity(int product_quantity) {
-        this.product_quantity = product_quantity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public BigDecimal getPricePerProduct() {
+        return pricePerProduct;
+    }
+
+    public void setPricePerProduct(BigDecimal pricePerProduct) {
+        this.pricePerProduct = pricePerProduct;
     }
 
     public BigDecimal getPrice() {
@@ -48,13 +56,5 @@ public class OrderItemDto {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-
-    public BigDecimal getTotal_amount() {
-        return total_amount;
-    }
-
-    public void setTotal_amount(BigDecimal total_amount) {
-        this.total_amount = total_amount;
     }
 }
