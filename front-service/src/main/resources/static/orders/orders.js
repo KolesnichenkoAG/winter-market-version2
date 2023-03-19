@@ -6,7 +6,7 @@ angular.module('market').controller('ordersController', function ($scope, $http)
             .then(function (response) {
                 $scope.orders = response.data;
             });
-    }
+    };
 
     $scope.loadOrders();
 });
