@@ -1,14 +1,15 @@
 package ru.geekbrains.winter.market.api;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class OrderDto {
     private Long id;
     private String username;
-    private String title_product;
-    private int product_quantity;
-    private BigDecimal price;
-    private BigDecimal total_amount;
+    private List<OrderItemDto> items;
+    private String address;
+    private String phone;
+    private BigDecimal totalPrice;
 
     public Long getId() {
         return id;
@@ -26,47 +27,35 @@ public class OrderDto {
         this.username = username;
     }
 
-    public String getTitle_product() {
-        return title_product;
+    public List<OrderItemDto> getItems() {
+        return items;
     }
 
-    public void setTitle_product(String title_product) {
-        this.title_product = title_product;
+    public void setItems(List<OrderItemDto> items) {
+        this.items = items;
     }
 
-    public int getProduct_quantity() {
-        return product_quantity;
+    public String getAddress() {
+        return address;
     }
 
-    public void setProduct_quantity(int product_quantity) {
-        this.product_quantity = product_quantity;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public BigDecimal getTotal_amount() {
-        return total_amount;
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setTotal_amount(BigDecimal total_amount) {
-        this.total_amount = total_amount;
-    }
-
-    public OrderDto(Long id, String username, String title_product, int product_quantity, BigDecimal price, BigDecimal total_amount) {
-        this.id = id;
-        this.username = username;
-        this.title_product = title_product;
-        this.product_quantity = product_quantity;
-        this.price = price;
-        this.total_amount = total_amount;
-    }
-
-    public OrderDto() {
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
