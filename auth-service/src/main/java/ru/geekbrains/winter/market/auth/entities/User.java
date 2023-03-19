@@ -1,5 +1,6 @@
 package ru.geekbrains.winter.market.auth.entities;
 
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -10,6 +11,7 @@ import java.util.Collection;
 
 @Entity
 @Data
+@Builder
 @Table(name = "users")
 public class User {
     @Id
@@ -36,4 +38,6 @@ public class User {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+
 }
